@@ -22,7 +22,15 @@ quizRouter.get("/get",async(req,res)=>{
 })
 
 
+quizRouter.get("/get/:id",async(req,res)=>{
 
+    try {
+        const quiz = await quizmodel.findOne({_id:req.params.id})
+        res.status(200).send(quiz)
+    } catch (error) {
+        res.status(400).send({"msg":error.message})
+    }
+})
 
 
 module.exports = {quizRouter};
