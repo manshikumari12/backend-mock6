@@ -6,6 +6,9 @@ const {userRouter}=require("./route/user.route")
 const {quizRouter}=require("./route/quiz.route")
 
 const app = express();
+const cors = require("cors")
+
+app.use(cors())
 ///usdfhsid
 
 app.use(express.json())
